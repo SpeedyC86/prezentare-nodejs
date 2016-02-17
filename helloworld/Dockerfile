@@ -1,3 +1,3 @@
 FROM node:5-onbuild
 # replace this with your application's default port
-EXPOSE 8888
+EXPOSE 2222

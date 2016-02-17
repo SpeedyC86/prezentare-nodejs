@@ -1,6 +1,6 @@
 docker pull node (!!! dureaza 5 minute pe fir)
 
-
+docker build -t code932/nodejs-helloworld .
 
 ///docker run -it --rm --name nodejs-running-app nodejs-basic
 docker run -it --rm --name nodejs-helloworld-script -v "$PWD/../nodejs-helloworld":/usr/src/app -w /usr/src/app nodejs-basic-app
