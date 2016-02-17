@@ -6,7 +6,7 @@
 ##What is NodeJS?
 [nodejs.org](https://nodejs.org)
 
-* >Node.js is an open source, cross-platform runtime environment for server-side and networking applications. - [Wikipedia](https://en.wikipedia.org/wiki/Node.js)
+* "Node.js is an open source, cross-platform runtime environment for server-side and networking applications". - [Wikipedia](https://en.wikipedia.org/wiki/Node.js)
 * a platform for building JavaScript applications optimized for performing high speed input/output operations 
 * a platform which contains a JavaScript execution engine (that engine is Google's Chrome V8 engine)
 
@@ -32,11 +32,30 @@
 ![alt text][iot]
 https://goo.gl/NZGYl1
 
-##Who got nodified 
+##Who fell in node with it?
+1. Backed by the Node.js Foundation
+2. Got support from Google, Microsoft, IBM and legions of open source majority fat and single developers
+3. Used by:
+* Google   
+* Microsoft  
+* IBM  
+* StrongLoop  
+* LinkedIn  
+* Mozilla  
+* PayPay  
+* Uber  
+* Walmart  
+* Target  
+* SAP  
+* and so many more, a true eye-catcher
 
-##Really now... what is NodeJS?
+
+
+##Really now... why NodeJS?
 * Asynchronous I/O Framework
-* Core in C++ on top of V8 Engine
+* Speedy fast (core in C++ on top of V8 Engine)
+* Swiss army knife for network
+* Single threaded
 * 
 
 
