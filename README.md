@@ -64,7 +64,7 @@
 * Swiss army knife for network
 * huge package ecosystem (npm)
  
-##But...
+##I like NodeJS, but...
 
 * have to think async
 * don't use CPU intensive tasks 
@@ -76,14 +76,18 @@ var that = this;
 ```javascript
 var someVar = []; //empty array
 alert(someVar == false); //evaluates true
-if (someVar) alert('hello');
+if (someVar) alert('hello'); //displays the alert
 ```
 * callback hell
 ```javascript
 getData(function(x){
     getMoreData(x, function(y){
-        getMoreData(y, function(z){ 
-            ...
+        getMoreData(y, function(z){
+            getMoreData(z, function(t){ 
+                getMoreData(t, function(w){ 
+                    ...
+                });
+            });
         });
     });
 });
@@ -147,6 +151,7 @@ $ node hello-world-2.js
 ```
 
 Go to: [http://127.0.0.1:2222](http://127.0.0.1:2222)
+
 ```javascript
 var http = require("http");
 
@@ -165,34 +170,53 @@ http.createServer(function (request, response) {
 console.log('Server running at http://127.0.0.1:2222/');
 ```
 
+##Modules and NPM
 
+NodeJS relies on modules that are included using the **require** keyword.
+One example would be the **require("http")** from the previous example.
+Modules can be created easily, just put the javascript code in to a separate js file include it using the **require** keyword.
+Libraries in NodeJS are called packages and they can be installed using the command *$ npm install package*
+NPM (Node package manager) is the official package manager for Nodejs and comes bundled with the Nodejs instalation
 
+###Web frameworks
+* build powerful networking applications using NodeJS and the built-in networking features
+* instead of writing your Apache/Nginx NodeJS version use a web framework
+* web frameworks: Express, Connect, Socket.IO, Zappa, ActionHero, etc
 
+###Express
+* fast, minimalistic
+* handles most of the functionality found in web servers:
+* available at: [//expressjs.com](http://expressjs.com/) or by using NPM
 
-
-
-
-
-```bash
-$ docker pull node 
-
-//cat timp asteptam sa se downloadeze imaginea docker de nodejs
-$ git clone https://github.com/SpeedyC86/prezentare-nodejs.git
-$ cd prezentare-nodejs
-```
-
-```bash
-$ docker pull node 
-
-//cat timp asteptam sa se downloadeze imaginea docker de nodejs
-$ git clone https://github.com/SpeedyC86/prezentare-nodejs.git
-$ cd prezentare-nodejs
-```
+####Install Express
 
 ```bash
-$ cd helloworld
-
-//cat timp asteptam sa se downloadeze imaginea docker de nodejs
-$ git clone https://github.com/SpeedyC86/prezentare-nodejs.git
-$ cd prezentare-nodejs
+$ cd express-helloworld
+$ npm init
+$ npm install express --save
+$ node hello-world.js
 ```
+
+####Run Express
+
+```bash
+$ cd express-helloworld
+$ node hello-world.js
+```
+
+Go to: [http://127.0.0.1:2222](http://127.0.0.1:2222)
+
+```javascript
+var express = require('express')
+var app = express();
+app.use(express.static('public'));
+
+app.get('/', function(req, res) {
+    res.sendFile(__dirname+'/index.html');
+});
+
+app.listen(2222);
+console.log('Express server running at http://127.0.0.1:2222/');
+```
+
+
