@@ -39,8 +39,7 @@
 ##NodeJS's popularity
 
 ![alt text][iot]
-https://goo.gl/NZGYl1
-
+[https://goo.gl/NZGYl1](https://goo.gl/NZGYl1)
 
 ##Who fell in node with it?
 
@@ -56,7 +55,6 @@ https://goo.gl/NZGYl1
 ..* Uber   
 ..* and so many more, a true eye-catcher
 
-
 ##Really now... why NodeJS?
 
 * crazy fast (core in C++ on top of V8 Engine)
@@ -69,6 +67,7 @@ https://goo.gl/NZGYl1
 ##But...
 
 * have to think async
+* don't use CPU intensive tasks 
 * frameworks and tools may not be as mature but in their teens (ready for production)
 * javascript "quirks"
 ```javascript
@@ -91,14 +90,86 @@ getData(function(x){
 ```
 ## Single threaded vs. multithreaded
 
-* Single threaded non-blocking I/O can be better than multithreaded blocking I/O
+Single threaded non-blocking I/O is better than multithreaded blocking I/O
 
 ![alt text][blocking-io]
 
 ![alt text][non-blocking-io]
 
+## Enough bla, bla how do I use it?
 
-* Multi threaded non-blocking I/O is a lot better than multithreaded blocking I/O
+###Install NodeJS
+```bash
+$ sudo apt-get install -y build-essential
+$ curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+$ node --version
+```
+
+###Run first program
+```bash
+$ git clone https://github.com/SpeedyC86/prezentare-nodejs.git
+$ cd prezentare-nodejs/samples
+$ node hello-world.js
+```
+
+###What can I use it for?
+
+* executable nodes
+* networking nodes:
+--* TCP servers
+--* Websocket servers
+--* HTTP servers
+--* DNS server
+--* want more? you can use it as any type of networking or executable application your mind can conjure
+
+###Executable nodes
+```bash
+$ node hello-world-1.js Hello
+World!
+```
+
+```javascript
+var myArgs = process.argv.slice(2);
+switch (myArgs[0]) {
+    case 'Hello':
+        console.log("World!");
+        break;
+    default:
+        console.log('How rude! You didn\'t even say Hello.');
+}
+```
+
+###Networking nodes
+You can create a HTTP server with just 5 lines of Javascript
+```bash
+$ node hello-world-2.js
+```
+
+Go to: [http://127.0.0.1:2222](http://127.0.0.1:2222)
+```javascript
+var http = require("http");
+
+http.createServer(function (request, response) {
+
+   // Send the HTTP header 
+   // HTTP Status: 200 : OK
+   // Content Type: text/plain
+   response.writeHead(200, {'Content-Type': 'text/plain'});
+   
+   // Send the response body as "Hello World"
+   response.end('Hello World!\n');
+}).listen(2222);
+
+// Console will print the message
+console.log('Server running at http://127.0.0.1:2222/');
+```
+
+
+
+
+
+
 
 
 
