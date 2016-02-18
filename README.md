@@ -46,14 +46,14 @@
 1. Backed by the Node.js Foundation
 2. Got support from Google, Microsoft, IBM and legions of open source majority fat and single developers
 3. Used by:
-..* Google   
-..* Microsoft  
-..* IBM   
-..* LinkedIn  
-..* Mozilla  
-..* PayPay  
-..* Uber   
-..* and so many more, a true eye-catcher
+  * Google   
+  * Microsoft  
+  * IBM   
+  * LinkedIn  
+  * Mozilla  
+  * PayPay  
+  * Uber   
+  * and so many more, a true eye-catcher
 
 ##Really now... why NodeJS?
 
@@ -117,11 +117,11 @@ $ node hello-world.js
 
 * executable nodes
 * networking nodes:
---* TCP servers
---* Websocket servers
---* HTTP servers
---* DNS server
---* want more? you can use it as any type of networking or executable application your mind can conjure
+  * TCP servers
+  * Websocket servers
+  * HTTP servers
+  * DNS server
+  * want more? you can use it as any type of networking or executable application your mind can conjure
 
 ###Executable nodes
 ```bash
