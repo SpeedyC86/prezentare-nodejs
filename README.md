@@ -4,6 +4,10 @@
 [iot]: https://raw.githubusercontent.com/SpeedyC86/prezentare-nodejs/master/assets/iot.png "Interest over time"
 [non-blocking-io]: https://raw.githubusercontent.com/SpeedyC86/prezentare-nodejs/master/assets/nodejs.png "Single threaded non-blocking I/O"
 [blocking-io]: https://raw.githubusercontent.com/SpeedyC86/prezentare-nodejs/master/assets/apache.png "Multi threaded blocking I/O"
+[websocket]: https://raw.githubusercontent.com/SpeedyC86/prezentare-nodejs/master/assets/socket.jpg "Websocket"
+[ajax_polling]: https://raw.githubusercontent.com/SpeedyC86/prezentare-nodejs/master/assets/ajax_polling.jpg "Ajax polling"
+[jsonp]: https://raw.githubusercontent.com/SpeedyC86/prezentare-nodejs/master/assets/jsonp.jpg "Jsonp polling"
+
 ![alt text][logo]
 
 
@@ -44,7 +48,7 @@
 ##Who fell in node with it?
 
 1. Backed by the Node.js Foundation
-2. Got support from Google, Microsoft, IBM and legions of open source majority fat and single developers
+2. Got support from Google, Microsoft, IBM and legions of majority fat and single open source developers
 3. Used by:
   * Google   
   * Microsoft  
@@ -68,7 +72,7 @@
 
 * have to think async
 * don't use CPU intensive tasks 
-* frameworks and tools may not be as mature but in their teens (ready for production)
+* frameworks and tools may not be as mature, but they are in their teens, 20s?; ready for production.
 * javascript "quirks"
 ```javascript
 var that = this; 
@@ -172,16 +176,16 @@ console.log('Server running at http://127.0.0.1:2222/');
 
 ##Modules and NPM
 
-NodeJS relies on modules that are included using the **require** keyword.
-One example would be the **require("http")** from the previous example.
-Modules can be created easily, just put the javascript code in to a separate js file include it using the **require** keyword.
-Libraries in NodeJS are called packages and they can be installed using the command *$ npm install package*
-NPM (Node package manager) is the official package manager for Nodejs and comes bundled with the Nodejs instalation
+* NodeJS relies on modules that are included using the **require** keyword.
+* One example would be the **require("http")** from the previous example.
+* Modules can be created easily, just put the javascript code in to a separate js file include it using the **require** keyword.
+* Libraries in NodeJS are called packages and they can be installed using the command *$ npm install package*.
+* NPM (Node package manager) is the official package manager for Nodejs and comes bundled with the Nodejs instalation.
 
 ###Web frameworks
-* build powerful networking applications using NodeJS and the built-in networking features
-* instead of writing your Apache/Nginx NodeJS version use a web framework
-* web frameworks: Express, Connect, Socket.IO, Zappa, ActionHero, etc
+Build powerful networking applications using NodeJS and the built-in networking features or instead of writing your Apache/Nginx NodeJS version use a web framework.
+
+Web frameworks: Express, Connect, Zappa, ActionHero, etc
 
 ###Express
 * fast, minimalistic
@@ -194,7 +198,6 @@ NPM (Node package manager) is the official package manager for Nodejs and comes 
 $ cd express-helloworld
 $ npm init
 $ npm install express --save
-$ node hello-world.js
 ```
 
 ####Run Express
@@ -219,4 +222,73 @@ app.listen(2222);
 console.log('Express server running at http://127.0.0.1:2222/');
 ```
 
+###Socket.IO
 
+Ok so we have client Javascript event handling, and server Javascript event handling but can we have full duplex server-client event handling what about realtime full duplex server-client event handling?
+
+Yes we can! 
+
+####Supported transports
+* Websocket
+* Adobe Flash Socket
+* Comet:
+  * Ajax polling
+  * Ajax long polling
+  * JSONP Polling (for cross-domain)
+  * Forever Iframe
+  * etc
+
+####What are these transports?
+
+I don't know. 
+But I don't need to know because Socket.IO is a gateway that shields me from having to know the details of each transport.
+It fallbacks to the transport that is supported by my browser. If I use a shitty browser it will go to a shitty almost realtime transport. If a use a modern browser it will go directly to Websocket.
+
+####Websocket
+
+#####Protocol
+
+* allows for a persistent, full-duplex communication between a client and remote host.
+
+#####HTML5
+
+* defines a JavaScript API for the WebSocket protocol within the browser, allowing bi-directional communication between the browser and server.
+
+![alt text][websocket]
+
+Advantages:
+* bidirectional
+* cross-domain
+* binary or text data
+
+Disavantages:
+* browser compatibility: <IE10, <Android 4.4, <Safari 6.0
+* possible problems with proxies
+
+####Ajax polling
+
+![alt text][ajax_polling]
+
+Advantages:
+* cross-domain requests
+* unidirectional communication between client and server
+* binary or text data
+
+Disavantages:
+* big delay between event and notification
+* big number of requests
+* big incomming trafic
+
+####JSONP long polling
+
+![alt text][jsonp]
+
+Advantages:
+* cross-domain requests
+* unidirectional communication between client and server
+* binary or text data
+
+Disavantages:
+* big delay between event and notification
+* big number of requests
+* big incomming trafic
