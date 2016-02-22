@@ -332,7 +332,7 @@ socket.on('message', function (json) { // register listener for receiving a mess
     console.log(json.msg);
     $("#message").text(json.msg);
 });
-socket.on('disconnect', function () { // regist listener for disconnected
+socket.on('disconnect', function () { // register listener for disconnected
     console.log("disconnected");
 });
 
