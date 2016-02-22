@@ -1,0 +1,15 @@
+{
+  "name": "websocket_hello_world",
+  "version": "1.0.0",
+  "description": "Node.js Websocket Hello World",
+  "author": "Constantin Cosuleanu <speedy@code932.com>",
+  "main": "hello-world.js",
+  "scripts": {
+    "start": "node hello-world.js"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "socket.io": "^1.4.5"
+  },
+  "license": "ISC"
+}

@@ -246,14 +246,6 @@ It fallbacks to the transport that is supported by my browser. If I use a shitty
 
 ####Websocket
 
-#####Protocol
-
-* allows for a persistent, full-duplex communication between a client and remote host.
-
-#####HTML5
-
-* defines a JavaScript API for the WebSocket protocol within the browser, allowing bi-directional communication between the browser and server.
-
 ![alt text][websocket]
 
 Advantages:
@@ -263,7 +255,7 @@ Advantages:
 
 Disavantages:
 * browser compatibility: <IE10, <Android 4.4, <Safari 6.0
-* possible problems with proxies
+* possible problems with proxies (use wss in production)
 
 ####Ajax polling
 
@@ -292,3 +284,75 @@ Disavantages:
 * big delay between event and notification
 * big number of requests
 * big incomming trafic
+
+####How to use?
+```bash
+$ cd socket-helloworld
+$ npm init
+$ npm install express --save
+$ npm install socket.io --save 
+```
+Server Side code:
+```javascript
+var express = require('express');
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+var port = process.env.PORT || 2222;
+
+server.listen(port, function () {
+    console.log('Server listening at port %d', port);
+});
+
+// Routing
+app.get('/', function(req, res) {
+    res.sendFile(__dirname+'/public/index.html');
+});
+app.use(express.static(__dirname + '/public'));
+
+
+io.on("connection", function (client) {// register listener for connected
+    client.on("message", function (msg) {//register listener for receiving a message
+        client.json.send({msg: msg}); // Sends a message to the client
+        client.broadcast.json.send({msg: msg}); // Sends a message to all other clients.
+    });
+
+    client.on("disconnect", function () {
+    }); // register listener for disconnected
+});
+```
+Client Side code:
+```javascript
+var socket = io.connect(); // Establish a connection to host
+socket.on('connect', function () { // register listener for connected
+    console.log("connected");
+});
+socket.on('message', function (json) { // register listener for receiving a message
+    console.log("message");
+    console.log(json.msg);
+    $("#message").text(json.msg);
+});
+socket.on('disconnect', function () { // regist listener for disconnected
+    console.log("disconnected");
+});
+
+socket.send('Hello world!'); // send a message to server
+setTimeout(function () {
+    socket.disconnect(); // Closes the connection
+}, 5000);
+```
+
+###Further reading:
+* https://nodejs.org
+* http://expressjs.com/
+* http://socket.io/
+* https://github.com/mongodb/node-mongodb-native
+* http://docs.sequelizejs.com/en/latest/
+* http://www.actionherojs.com/
+
+###Resources:
+* https://os.alfajango.com/websockets-slides/
+* http://cjus.github.io/nodejs-presentation/
+* http://www.slideshare.net/vikasing/introduction-to-nodejs-11730771
+* https://nodejs.org
+* http://sideeffect.kr:8001/
