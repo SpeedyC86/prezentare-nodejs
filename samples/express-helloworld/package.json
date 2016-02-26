@@ -1,0 +1,14 @@
+{
+  "name": "express-helloworld",
+  "version": "1.0.0",
+  "description": "Hello World",
+  "main": "hello-world.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Speedy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
