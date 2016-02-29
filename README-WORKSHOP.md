@@ -27,11 +27,11 @@ $ make run-workshop-foreground
 
 ##Objectives
 
-Build a Nodejs webchat solution with the following options:
-1. List connected users
-2. exchange messages
-3. whisper 
-4. last 50 messages
+Build a Nodejs web chat solution with the following options:
+* List connected users
+* Exchange messages
+* Whisper to user 
+* Load last 50 messages
 
 
 
