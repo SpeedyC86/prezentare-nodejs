@@ -1,34 +1,38 @@
-docker pull node (!!! dureaza 5 minute pe fir)
-
-docker build -t code932/nodejs-helloworld .
-
-///docker run -it --rm --name nodejs-running-app nodejs-basic
-docker run -it --rm --name nodejs-helloworld-script -v "$PWD/../nodejs-helloworld":/usr/src/app -w /usr/src/app nodejs-basic-app
-docker run -it --rm --name nodejs-helloworld-script -v "$PWD/../nodejs-helloworld":/usr/src/app -w /usr/src/app node:5 node main.js
-
-
-
+# Nodejs Workshop
 
 ```bash
-$ docker pull node 
-
-//cat timp asteptam sa se downloadeze imaginea docker de nodejs
 $ git clone https://github.com/SpeedyC86/prezentare-nodejs.git
 $ cd prezentare-nodejs
 ```
 
-```bash
-$ docker pull node 
-
-//cat timp asteptam sa se downloadeze imaginea docker de nodejs
-$ git clone https://github.com/SpeedyC86/prezentare-nodejs.git
-$ cd prezentare-nodejs
-```
+##Commands to install NodeJS
 
 ```bash
-$ cd helloworld
-
-//cat timp asteptam sa se downloadeze imaginea docker de nodejs
-$ git clone https://github.com/SpeedyC86/prezentare-nodejs.git
-$ cd prezentare-nodejs
+$ sudo apt-get install -y build-essential
+$ curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+$ node --version
 ```
+
+##Commands to install Docker
+
+https://docs.docker.com/engine/installation/linux/ubuntulinux/
+
+##Docker commands:
+
+```bash
+$ docker pull node
+$ make run-workshop-foreground
+```
+
+##Objectives
+
+Build a Nodejs webchat solution with the following options:
+1. List connected users
+2. exchange messages
+3. whisper 
+4. last 50 messages
+
+
+
+

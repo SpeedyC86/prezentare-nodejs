@@ -1,0 +1,12 @@
+{
+  "name": "docker_workshop",
+  "version": "1.0.0",
+  "description": "Node.js Workshop",
+  "author": "Your name <youremail@code932.com>",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+  }
+}
