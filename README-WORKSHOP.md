@@ -33,6 +33,9 @@ Build a Nodejs web chat solution with the following options:
 * Whisper to user 
 * Load last 50 messages
 
+##Workshop Hints
+* get inspiration from samples/socket-helloworld
+* 
 
 
 
