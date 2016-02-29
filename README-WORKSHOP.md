@@ -14,7 +14,7 @@ $ sudo apt-get install -y nodejs
 $ node --version
 ```
 
-##Commands to install Docker
+##Alternative, commands to install Docker
 
 https://docs.docker.com/engine/installation/linux/ubuntulinux/
 
