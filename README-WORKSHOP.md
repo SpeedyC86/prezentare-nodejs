@@ -25,7 +25,7 @@ $ docker pull node
 $ make run-workshop-foreground
 ```
 
-##Objectives
+##Workshop Objectives
 
 Build a Nodejs web chat solution with the following options:
 * List connected users
